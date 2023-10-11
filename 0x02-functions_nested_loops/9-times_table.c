@@ -13,8 +13,7 @@ void times_table(void)
 		for (j = 0; j < 10; j++)
 		{
 			result = i * j;
-			printf("%d", result);
-			printf(",  ");
+			printf("%2d, ", result);
 		}
 	printf("\n");
 	}
