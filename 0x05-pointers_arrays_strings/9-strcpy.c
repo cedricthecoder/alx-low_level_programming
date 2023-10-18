@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* char *_strcpy - some function
+* *_strcpy - some function
 * @dest: some parameter
 * @src: some other parameter
 * return: string
