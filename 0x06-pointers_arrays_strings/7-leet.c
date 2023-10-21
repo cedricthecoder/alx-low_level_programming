@@ -8,7 +8,7 @@
 char *leet(char *str)
 {
 	char *letters = "aeotlAEOTL";
-	char *replacements = "430701";
+	char *replacements = "4307143071";
 	int i, j;
 
 	for (i = 0; str[i] != '\0'; i++)
@@ -17,7 +17,7 @@ char *leet(char *str)
 		{
 			if (str[i] == letters[j])
 			{
-				str[i] = replacements[j / 2];
+				str[i] = replacements[j];
 				break;
 			}
 		}
