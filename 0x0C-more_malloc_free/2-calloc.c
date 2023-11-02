@@ -7,18 +7,18 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	char *block;
-	unsigned int i;
+	char *blk;
+	unsigned int j;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
-	block = malloc(nmemb * size);
-	if (block != NULL)
+	blk = malloc(nmemb * size);
+	if (blk != NULL)
 	{
-		for (i = 0; i < (nmemb * size); i++)
-			block[i] = 0;
-		return (block);
+		for (j = 0; j < (nmemb * size); j++)
+			blk[i] = 0;
+		return (blk);
 	}
-	else 
+	else
 		return (NULL);
 }
