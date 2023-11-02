@@ -7,20 +7,20 @@
  */
 int *array_range(int min, int max)
 {
-	int *block;
-	int i, j = 0;
+	int *blk;
+	int m, n = 0;
 
 	if (min > max)
 		return (NULL);
-	block = malloc(sizeof(*block) * ((max - min) + 1));
-	if (block != NULL)
+	blk = malloc(sizeof(*blk) * ((max - min) + 1));
+	if (blk != NULL)
 	{
-		for (i = min; i <= max; i++)
+		for (m = min; m <= max; m++)
 		{
-			block[j] = i;
-			j++;
+			blk[n] = m;
+			n++;
 		}
-		return (block);
+		return (blk);
 	}
 	else
 		return (NULL);
