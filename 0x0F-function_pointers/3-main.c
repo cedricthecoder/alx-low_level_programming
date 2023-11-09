@@ -7,28 +7,30 @@
  * @argv: argument vector
  * Return: Always 0
  */
-int main(int argc, char *argv[])
+int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 	int m, n;
-	int (*operation)(int, int);
+	int *operation;
+
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	if (argv[2][1])
-	{
-		printf("Error\n");
-		exit(99);
-	}
-	operation = get_op_func(argv[2]);
-	if (operation == NULL)
-	{
-		printf("Error\n");
-		exit(99);
-	}
 	m = atoi(argv[1]);
+	operation = argv[2];
 	n = atoi(argv[3]);
-	printf("%d\n", operation(m, n));
+
+	if (get_op_func(operation) == NULL || operation[1] != '\0')
+	{
+		printf("Error\n");
+		exit(99);
+	}
+	if ((*operation == '/' && n == 0) || (*operation == '%' && n == 0))
+	{
+		printf("Error\n");
+		exit(100);
+	}
+	printf("%d\n", get_op_func(operation)(m, n));
 	return (0);
 }
