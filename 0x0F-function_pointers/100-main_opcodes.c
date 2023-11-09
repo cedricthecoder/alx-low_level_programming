@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(2);
 	}
-	for (j = 0; j < nbytes;j++)
+	for (j = 0 ; j < nbytes ; j++)
 	{
 		printf("%02x", opc[j] & 0xFF);
 		if (j != nbytes - 1)
